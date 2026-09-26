@@ -248,7 +248,7 @@ function App() {
 
           <Board board={state.board} onSquareClick={handleSquareClick} />
 
-          <button className="restart-button" onClick={handleRestart} > Restart Game</button>
+          <button className="restart-button" onClick={handleRestart} > Restart </button>
 
         </div>
 
