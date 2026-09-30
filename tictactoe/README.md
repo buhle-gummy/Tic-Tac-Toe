@@ -1,16 +1,36 @@
-# React + Vite
+# Tic-Tac-Toe — React
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern Tic-Tac-Toe game built with React as part of my Junior Frontend Developer assignment.
 
-Currently, two official plugins are available:
+##  Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 3×3 Tic-Tac-Toe board
+- Player vs Computer
+- X and O turn management
+- Win detection
+- Draw detection
+- Prevents overwriting occupied squares
+- Restart game button
+- Active player indicator
+- Computer thinking indicator
+- Smart computer opponent
+- Minimax algorithm
+- Computer can block winning moves
+- Computer can make winning moves
+- Responsive design
 
-## React Compiler
+##  State Management
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project uses React's `useReducer` for game state management.
 
-## Expanding the Oxlint configuration
+The reducer manages:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- Board state
+- Current player
+- Winner
+- Draw state
+
+### Reducer Actions
+
+MAKE_MOVE
+RESET_GAME
