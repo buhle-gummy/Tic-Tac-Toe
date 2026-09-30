@@ -16,7 +16,7 @@ export const initialState = {
   draw: false,
 };
 
-function checkWinner(board) {
+export function getWinner(board) {
   for (const combination of WINNING_COMBINATIONS) {
     const [a, b, c] = combination;
 
@@ -37,12 +37,10 @@ export function gameReducer(state, action) {
     case "MAKE_MOVE": {
       const { index } = action;
 
-    
       if (state.winner || state.draw) {
         return state;
       }
 
-    
       if (state.board[index]) {
         return state;
       }
@@ -50,7 +48,8 @@ export function gameReducer(state, action) {
       const newBoard = [...state.board];
       newBoard[index] = state.currentPlayer;
 
-      const winner = checkWinner(newBoard);
+      const winner = getWinner(newBoard);
+
       if (winner) {
         return {
           ...state,
@@ -59,7 +58,9 @@ export function gameReducer(state, action) {
         };
       }
 
-      const isDraw = newBoard.every((square) => square !== null);
+      const isDraw = newBoard.every(
+        (square) => square !== null
+      );
 
       if (isDraw) {
         return {
@@ -68,6 +69,7 @@ export function gameReducer(state, action) {
           draw: true,
         };
       }
+
       return {
         ...state,
         board: newBoard,
